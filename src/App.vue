@@ -1,11 +1,10 @@
 <template>
   <div class="q-pa-md">
-    <div class="q-gutter-y-md" style="max-width: 600px">
-      <q-tabs
-        v-model="tab"
-        class="text-teal"
-      >
-        <q-tab name="Home" label="Home" @click="goto('/')"/>
+    <div class="q-gutter-y-md">
+      <router-link to="/">
+          <img src="../public/logo_transparent.png" alt="Descripción de la imagen" />
+      </router-link>
+      <q-tabs v-model="tab" class="text-teal">
         <q-tab name="Rooms" label="Rooms" @click="goto('/rooms')"/>
         <q-tab name="Services" label="Services" @click="goto('/services')"/>
         <q-tab name="Activities" label="Activities" @click="goto('/activities')"/>
@@ -27,3 +26,16 @@ const goto = (path) =>{
   router.push(path);
 }
 </script>
+<style>
+img{
+width: 150px;
+}
+.q-gutter-y-md{
+  display: flex;
+  flex-wrap: wrap;
+  height: 100px;
+}
+.q-gutter-y-md q-tabs{
+  height: 100px;
+}
+</style>
