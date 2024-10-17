@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../components/Home.vue'
-import Rooms from '../components/Rooms.vue'
-import Services from '../components/Service.vue'
-import Activities from '../components/Activities.vue'
-import Contact from '../components/Contact.vue'
+import Home from '../components/home.vue'
+import Rooms from '../components/rooms.vue'
+import Services from '../components/service.vue'
+import Activities from '../components/activities.vue'
+import Contact from '../components/contact.vue'
 
 const routes =[
     {path:"/", component:Home},
