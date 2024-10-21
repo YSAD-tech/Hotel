@@ -1,14 +1,13 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  background-image: url(https://images.unsplash.com/photo-1501961431051-1b13e78c4551?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjBuaWdodHxlbnwwfHwwfHx8MA%3D%3D);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+
+.textBtn{
+  color: white;
+}
+
+

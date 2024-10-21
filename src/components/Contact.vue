@@ -5,7 +5,7 @@
       <div class="contact-form">
         <h2>Formulario de Contacto</h2>
         <q-form @submit.prevent="submitForm">
-          <q-input v-model="name" label="Nombre" required />
+          <q-input v-model="name" label="Nombre" required/>
           <q-input v-model="email" label="Correo Electrónico" type="email" required />
           <q-input v-model="message" label="Mensaje" type="textarea" required />
           <q-btn label="Enviar" type="submit" color="primary" />
@@ -52,6 +52,17 @@
   
   .contact-form {
     margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #161414;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-form h2 {
+    margin-top: 2px;
+    color: #161414;
+    margin-bottom: 10px;
   }
   
   .map-container {
