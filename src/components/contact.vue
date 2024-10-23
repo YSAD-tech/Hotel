@@ -3,14 +3,31 @@
       <h1>Contacto</h1>
   
       <div class="contact-form">
-        <h2>Formulario de Contacto</h2>
-        <q-form @submit.prevent="submitForm">
-          <q-input v-model="name" label="Nombre" required/>
-          <q-input v-model="email" label="Correo Electrónico" type="email" required />
-          <q-input v-model="message" label="Mensaje" type="textarea" required />
-          <q-btn label="Enviar" type="submit" color="primary" />
-        </q-form>
-      </div>
+    <h2>Formulario de Contacto</h2>
+    <q-form @submit.prevent="submitForm">
+      <q-input 
+        v-model="name" 
+        label="Nombre" 
+        required 
+        label-color="orange" 
+      />
+      <q-input 
+        v-model="email" 
+        label="Correo Electrónico" 
+        type="email" 
+        required 
+        label-color="orange" 
+      />
+      <q-input 
+        v-model="message" 
+        label="Mensaje" 
+        type="textarea" 
+        required 
+        label-color="orange"
+      />
+      <q-btn label="Enviar" type="submit" class="input" color="orange" />
+    </q-form>
+  </div>
   
       <div class="map-container">
         <h2>Nuestra Ubicación</h2>
@@ -23,6 +40,18 @@
         ></iframe>
       </div>
     </div>
+    <footer>
+
+<div class="iconos">
+    <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-facebook" aria-label="Facebook"></q-btn>
+    <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-instagram"></q-btn>
+    <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-twitter"></q-btn>
+    <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-youtube"></q-btn>
+    <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-whatsapp"></q-btn>
+</div>
+
+
+</footer>
   </template>
   
   <script setup>
@@ -44,10 +73,15 @@
   </script>
   
   <style scoped>
+.custom-label {
+  color: #ff6600; /* Aquí pones el color personalizado */
+}
+
   .contact-container {
     max-width: 1200px; /* Ajusta el ancho máximo según sea necesario */
     margin: 0 auto; /* Centra el contenedor */
     padding: 20px;
+    color: rgb(185, 154, 115);
   }
   
   .contact-form {
@@ -55,21 +89,64 @@
     padding: 15px;
     border: 1px solid #161414;
     border-radius: 8px;
-    background-color: #ffffff;
+    background-color: #272020f4;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  .contact-form h2 {
+  .contact-form h2{
     margin-top: 2px;
-    color: #161414;
     margin-bottom: 10px;
   }
-  
+
+  .input {
+    color: rgb(185, 154, 115);
+    background-color: chocolate;
+  }
+
+  q-input {
+    font-size: 30px;
+  }
+
   .map-container {
     margin-top: 20px;
+    border-radius: 200px;
   }
   
   iframe {
     border: 0; /* Elimina el borde del iframe */
   }
+  
+footer {
+  background-color: #333; /* Fondo oscuro */
+  color: white; /* Texto claro */
+  padding: 20px 0; /* Espaciado */
+  text-align: center; /* Centra el contenido */
+}
+
+footer .iconos {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los íconos */
+  gap: 15px; /* Espacio entre los botones */
+}
+
+footer .q-btn {
+  width: 50px; /* Tamaño del botón */
+  height: 50px; /* Tamaño del botón */
+  border-radius: 50%; /* Botones redondeados */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d4c19c; /* Color de fondo personalizado */
+  color: white; /* Color del ícono */
+  transition: background-color 0.3s ease;
+}
+
+footer .q-btn:hover {
+  background-color: #b39c7c; /* Cambio de color en hover */
+}
+
+footer .q-btn i {
+  font-size: 24px; /* Tamaño del ícono */
+}
+
   </style>  

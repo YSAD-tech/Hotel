@@ -14,3 +14,7 @@ export default defineConfig({
     })
   ]
 })
+
+framework: {
+  iconSet: 'fontawesome-v5'
+}

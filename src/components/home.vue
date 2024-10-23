@@ -43,57 +43,62 @@
     </div>
 
     <!-- Carrusel de Servicios -->
-    <div class="services">
-      <h2>Nuestros Servicios</h2>
-      <q-carousel
-        class="services-carousel"
-        arrows
-        infinite
-        height="200px"
-        control-color="white"
-      >
-        <q-carousel-slide v-for="service in services" :key="service.label">
-          <q-btn class="service-card" :to="service.link">
-            <div class="service-info">
-              <img :src="service.image" alt="Imagen de {{ service.label }}" class="services-image" />
-              <h3>{{ service.label }}</h3>
-              <p>{{ service.description }}</p>
-            </div>
-          </q-btn>
-        </q-carousel-slide>
-        <div class="btnRooms">
-          <q-btn to="/rooms">Ver mas...</q-btn>
+<div class="services">
+  <h2>Nuestros Servicios</h2>
+  <q-carousel
+    class="services-carousel"
+    arrows
+    infinite
+    height="200px"
+    control-color="white"
+  >
+    <q-carousel-slide v-for="service in services" :key="service.label">
+      <q-btn class="service-card" :to="service.link">
+        <div class="service-info">
+          <img :src="service.image" alt="Imagen de {{ service.label }}" class="services-image" />
+          <h3>{{ service.label }}</h3>
+          <p>{{ service.description }}</p>
         </div>
-      </q-carousel>
-      
-      <h2>Actividades</h2>
-      <q-carousel
-        class="activities-carousel"
-        arrows
-        infinite
-        height="200px"
-        control-color="white"
-      >
-        <q-carousel-slide v-for="activity in activities" :key="activity.label">
-          <q-btn class="activity-card" :to="activity.link">
-            <img :src="activity.image" alt="Imagen de {{ activity.label }}" class="activity-image" />
-            <div class="activity-info">
-              <h3>{{ activity.label }}</h3>
-              <p>{{ activity.description }}</p>
-            </div>
-          </q-btn>
-        </q-carousel-slide>
-        <div class="btnRooms">
-          <q-btn to="/rooms">Ver mas...</q-btn>
+      </q-btn>
+    </q-carousel-slide>
+  </q-carousel>
+
+  <!-- Botón de Ver más para Servicios -->
+  <div class="btn-ver-mas">
+    <q-btn to="/services">Ver más...</q-btn>
+  </div>
+
+  <h2>Actividades</h2>
+  <q-carousel
+    class="activities-carousel"
+    arrows
+    infinite
+    height="200px"
+    control-color="white"
+  >
+    <q-carousel-slide v-for="activity in activities" :key="activity.label">
+      <q-btn class="activity-card" :to="activity.link">
+        <img :src="activity.image" alt="Imagen de {{ activity.label }}" class="activity-image" />
+        <div class="activity-info">
+          <h3>{{ activity.label }}</h3>
+          <p>{{ activity.description }}</p>
         </div>
-      </q-carousel>
-    </div>
+      </q-btn>
+    </q-carousel-slide>
+  </q-carousel>
+
+  <!-- Botón de Ver más para Actividades -->
+  <div class="btn-ver-mas">
+    <q-btn to="/activities">Ver más...</q-btn>
+  </div>
+</div>
+
   </div>
 
   <footer>
 
     <div class="iconos">
-        <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-facebook"></q-btn>
+        <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-facebook" aria-label="Facebook"></q-btn>
         <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-instagram"></q-btn>
         <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-twitter"></q-btn>
         <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-youtube"></q-btn>
@@ -176,6 +181,7 @@ const activities = ref([
 .home-container {
   max-width: 1200px; /* Ajusta el ancho máximo según sea necesario */
   margin: 0 auto; /* Centra el contenedor */
+  color: rgb(185, 154, 115);
 }
 
 .carousel-image {
@@ -186,7 +192,7 @@ const activities = ref([
 
 .hotel-history {
   padding: 20px;
-  background-color: #000000;
+  background-color: #272020f4;
   border-radius: 8px;
   margin: 20px 0;
 }
@@ -255,5 +261,57 @@ const activities = ref([
   padding: 10px; /* Añade espacio alrededor del carrusel */
   background-color: #fff; /* Fondo blanco para los carruseles */
   border-radius: 8px; /* Bordes redondeados en el carrusel */
+}
+
+.btn-ver-mas {
+  text-align: left; /* Alinea el botón a la izquierda */
+  margin-top: 20px; /* Espacio entre el carrusel y el botón */
+  margin-left: 20px; /* Ajusta el margen izquierdo para separarlo del borde */
+}
+
+.btn-ver-mas .q-btn {
+  background-color: #d4c19c; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Ajusta el relleno del botón */
+  font-size: 16px; /* Tamaño de la fuente */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease;
+}
+
+.btn-ver-mas .q-btn:hover {
+  background-color: #b39c7c; /* Cambio de color en hover */
+}
+
+footer {
+  background-color: #333; /* Fondo oscuro */
+  color: white; /* Texto claro */
+  padding: 20px 0; /* Espaciado */
+  text-align: center; /* Centra el contenido */
+}
+
+footer .iconos {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los íconos */
+  gap: 15px; /* Espacio entre los botones */
+}
+
+footer .q-btn {
+  width: 50px; /* Tamaño del botón */
+  height: 50px; /* Tamaño del botón */
+  border-radius: 50%; /* Botones redondeados */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d4c19c; /* Color de fondo personalizado */
+  color: white; /* Color del ícono */
+  transition: background-color 0.3s ease;
+}
+
+footer .q-btn:hover {
+  background-color: #b39c7c; /* Cambio de color en hover */
+}
+
+footer .q-btn i {
+  font-size: 24px; /* Tamaño del ícono */
 }
 </style>

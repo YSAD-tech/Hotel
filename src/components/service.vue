@@ -11,6 +11,18 @@
       </div>
     </div>
   </div>
+  <footer>
+
+<div class="iconos">
+    <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-facebook" aria-label="Facebook"></q-btn>
+    <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-instagram"></q-btn>
+    <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-twitter"></q-btn>
+    <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-youtube"></q-btn>
+    <q-btn :style="{ backgroundColor: '#d4c19c' }" icon="fab fa-whatsapp"></q-btn>
+</div>
+
+
+</footer>
 </template>
 
 <script setup>
@@ -113,6 +125,40 @@ const services = ref([
 .service-detail {
   font-size: 0.9em; /* Tamaño de fuente para las descripciones detalladas */
   color: #949494; /* Color del texto de descripción detallada */
+}
+
+
+footer {
+  background-color: #333; /* Fondo oscuro */
+  color: white; /* Texto claro */
+  padding: 20px 0; /* Espaciado */
+  text-align: center; /* Centra el contenido */
+}
+
+footer .iconos {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los íconos */
+  gap: 15px; /* Espacio entre los botones */
+}
+
+footer .q-btn {
+  width: 50px; /* Tamaño del botón */
+  height: 50px; /* Tamaño del botón */
+  border-radius: 50%; /* Botones redondeados */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d4c19c; /* Color de fondo personalizado */
+  color: white; /* Color del ícono */
+  transition: background-color 0.3s ease;
+}
+
+footer .q-btn:hover {
+  background-color: #b39c7c; /* Cambio de color en hover */
+}
+
+footer .q-btn i {
+  font-size: 24px; /* Tamaño del ícono */
 }
 
 </style>  
