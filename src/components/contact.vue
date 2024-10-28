@@ -1,20 +1,20 @@
 <template>
     <div class="contact-container">
-      <h1>Contacto</h1>
+      <h1>Contact</h1>
   
       <div class="contact-form">
-    <h2>Formulario de Contacto</h2>
+    <h2>Contact Form</h2>
     <q-form @submit.prevent="submitForm">
       <q-input 
         v-model="name" 
-        label="Nombre"
+        label="Name"
         required 
         label-color="orange" 
         input-style="color: white"
       />
       <q-input 
         v-model="email" 
-        label="Correo Electrónico" 
+        label="Email" 
         type="email" 
         required 
         label-color="orange" 
@@ -22,18 +22,18 @@
       />
       <q-input 
         v-model="message" 
-        label="Mensaje" 
+        label="Message" 
         type="textarea" 
         required 
         label-color="orange"
         input-style="color: white"
       />
-      <q-btn label="Enviar" type="submit" class="input" color="orange" />
+      <q-btn label="Send" type="submit" class="input" color="orange" />
     </q-form>
   </div>
   
       <div class="map-container">
-        <h2>Nuestra Ubicación</h2>
+        <h2>Our Location</h2>
         <iframe
           width="100%"
           height="400"

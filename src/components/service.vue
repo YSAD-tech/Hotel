@@ -33,50 +33,50 @@ const services = ref([
   { 
     name: 'Spa', 
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaIy-UU1AUxK1tczKd999BLDWBtf2fpx1rWXkYtXQ984ot1Th2NtS6hOdbkkEtRBMebMw&usqp=CAU', 
-    shortDescription: 'Relájate y rejuvenece.', 
-    detailDescription: 'Disfruta de una amplia variedad de tratamientos de spa, incluyendo masajes, faciales y terapias holísticas para relajarte y rejuvenecer tu cuerpo y mente.'
+    shortDescription: 'Relax and rejuvenate.', 
+    detailDescription: 'Enjoy a wide variety of spa treatments, including massages, facials and holistic therapies to relax and rejuvenate your body and mind.'
   },
   { 
-    name: 'Restaurante', 
+    name: 'Restaurant', 
     image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/15/da/15/terraza.jpg?w=600&h=-1&s=1', 
-    shortDescription: 'Gastronomía exquisita.', 
-    detailDescription: 'Deléitate con una experiencia culinaria única en nuestro restaurante, donde ofrecemos una variedad de platillos preparados por chefs de renombre.'
+    shortDescription: 'Exquisite gastronomy.', 
+    detailDescription: 'Delight in a unique culinary experience in our restaurant, where we offer a variety of dishes prepared by renowned chefs.'
   },
   { 
-    name: 'Gimnasio', 
+    name: 'Gym', 
     image: 'https://etenonfitness.com/wp-content/uploads/2023/04/Novotel-Shanghai-Clover-Star-Trac.jpg', 
-    shortDescription: 'Mantente en forma.', 
-    detailDescription: 'Nuestro gimnasio está equipado con máquinas de última generación y ofrece clases dirigidas para ayudarte a mantener tu rutina de ejercicios mientras estás de viaje.'
+    shortDescription: 'Stay fit.', 
+    detailDescription: 'Our gym is equipped with state-of-the-art machines and offers guided classes to help you maintain your exercise routine while you´re traveling.'
   },
   { 
-    name: 'Servicio a la Habitación', 
+    name: 'Room Service', 
     image: 'https://hotelplazarevolucion.com/wp-content/uploads/2022/01/room-service.png', 
-    shortDescription: 'Comodidad en tu habitación.', 
-    detailDescription: 'Disfruta de nuestro servicio a la habitación, disponible las 24 horas, para que puedas degustar deliciosos platillos sin salir de tu habitación.'
+    shortDescription: 'Comfort in your room.', 
+    detailDescription: 'Enjoy our room service, available 24 hours a day, so you can enjoy delicious dishes without leaving your room.'
   },
   { 
-    name: 'Piscina', 
+    name: 'Pool', 
     image: 'https://cdn.pixabay.com/photo/2016/11/17/09/28/hotel-1831072_640.jpg', 
-    shortDescription: 'Relájate bajo el sol.', 
-    detailDescription: 'Nuestra piscina al aire libre es el lugar perfecto para relajarte y disfrutar de un refrescante baño mientras te bronceas al sol.'
+    shortDescription: 'Relax in the sun.', 
+    detailDescription: 'Our outdoor pool is the perfect place to relax and enjoy a refreshing swim while you tan in the sun.'
   },
   { 
-    name: 'Transporte', 
+    name: 'Transport', 
     image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/b0/bc/5b/shuttle-bus-service-hotels.jpg?w=1200&h=-1&s=1', 
-    shortDescription: 'Facilita tu movilidad.', 
-    detailDescription: 'Ofrecemos servicios de transporte al aeropuerto y excursiones, asegurando que tu experiencia de viaje sea cómoda y sin complicaciones.'
+    shortDescription: 'Facilitate your mobility.', 
+    detailDescription: 'We offer airport transportation services and excursions, ensuring that your travel experience is comfortable and hassle-free.'
   },
   { 
-    name: 'Conexión Wi-Fi', 
+    name: 'Wi-Fi connection', 
     image: 'https://img.redestelecom.es/wp-content/uploads/2023/09/11120243/Hotel-WiFi-Adobe-Stock.jpg', 
-    shortDescription: 'Conéctate en cualquier lugar.', 
-    detailDescription: 'Disfruta de conexión Wi-Fi gratuita en todas las áreas del hotel para mantenerte conectado con amigos y familiares durante tu estancia.'
+    shortDescription: 'Connect anywhere.', 
+    detailDescription: 'Enjoy free Wi-Fi in all areas of the hotel to stay connected with friends and family during your stay.'
   },
   { 
-    name: 'Centro de Negocios', 
+    name: 'Business center', 
     image: 'https://topadventure.com/img/2021/01/12/puebla_hoteles_negocios_business.jpg?__scale=c:transparent,w:480,h:270,t:3', 
-    shortDescription: 'Ideal para viajes de negocios.', 
-    detailDescription: 'Nuestro centro de negocios está equipado con computadoras y servicios de impresión para satisfacer tus necesidades laborales durante tu estancia.'
+    shortDescription: 'Ideal for business trips.', 
+    detailDescription: 'Our business center is equipped with computers and printing services to meet your business needs during your stay.'
   }
 ]);
 </script>
@@ -106,11 +106,15 @@ const services = ref([
   transform: scale(1.05); /* Aumenta el tamaño ligeramente al pasar el cursor */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
 }
-.services-container h1, h3, p{
+.services-container h1, h3{
   margin-top: -2px;
-  color: rgb(185, 154, 115);
+  color: rgba(239, 196, 104, 0.907);
 }
 
+p{
+  font-size: large;
+  color: #cfa26c;
+}
 
 .service-card h3 {
   margin-top: -2px;
@@ -118,7 +122,7 @@ const services = ref([
 }
 .service-image {
   width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
-  height: auto; /* Mantiene la proporción de la imagen */
+  height: 62%; /* Mantiene la proporción de la imagen */
   border-radius: 8px 8px 0 0; /* Esquinas redondeadas en la parte superior */
 }
 

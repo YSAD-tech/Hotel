@@ -12,7 +12,7 @@
   transition-prev="slide-right"
   transition-next="slide-left"
   class="banner-carousel"
-  control-color="orange"
+  control-color="white"
   height="550px"
 >
   <q-carousel-slide
@@ -30,15 +30,15 @@
       <div class="history-content">
         <img src="https://storage.googleapis.com/a1aa/image/IgnVtW8KpPZ1I9BYrcMhl00aXQQArePGkG8WJHEuTUU0w00JA.jpg" alt="Hotel Marisol" class="history-image" />
         <div class="history-text">
-          <h2>Nuestra Historia</h2>
+          <h2>Our History</h2>
           <p>
-            El Hotel Marisol fue fundado en 1995 por la familia López, quienes soñaban con crear un refugio acogedor para los viajeros. Desde sus humildes comienzos, este hotel ha crecido para convertirse en un símbolo de hospitalidad en la región.
+            The Marisol Hotel was founded in 1995 by the López family, who dreamed of creating a welcoming refuge for travelers. From its humble beginnings, this hotel has grown to become a symbol of hospitality in the region.
           </p>
           <p>
-            La visión de la familia era ofrecer un lugar donde los huéspedes pudieran sentirse como en casa, disfrutando de un servicio excepcional y un entorno hermoso. Con el paso de los años, el Hotel Marisol ha evolucionado, incorporando modernas comodidades sin perder su esencia cálida y familiar.
+            The family's vision was to offer a place where guests could feel at home, enjoying exceptional service and beautiful surroundings. Over the years, the Marisol Hotel has evolved, incorporating modern amenities without losing its warm and familiar essence.
           </p>
           <p>
-            Hoy en día, el Hotel Marisol es conocido no solo por su confort y calidad, sino también por su compromiso con la sostenibilidad y el apoyo a la comunidad local. Cada año, miles de visitantes llegan para experimentar la magia del Hotel Marisol y crear recuerdos inolvidables.
+            Today, Hotel Marisol is known not only for its comfort and quality, but also for its commitment to sustainability and support for the local community. Every year, thousands of visitors come to experience the magic of Hotel Marisol and create unforgettable memories.
           </p>
         </div>
       </div>
@@ -151,7 +151,7 @@ const services = ref([
 const activities = ref([
   { label: 'Bungee Jumping', image: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/22/b3/f1.jpg' },
   { label: 'Senderismo', image: 'https://media-magazine.trivago.com/wp-content/uploads/2019/11/27121325/hoteles-para-senderistas-junto-a-montanas.jpg' },
-  { label: 'Surf', image: 'https://www.sunset.com/wp-content/uploads/surf-hotels-jamie-obrien-surf-experience-the-ritz-carlton-oahu-turtle-bay-pr-0724-1200x900.jpg' },
+  { label: 'Surf', image: 'https://www.sunset.com/wp-content/uploads/surf-hotels-jamie-obrien-surf-experience-the-ritz-carlton-oahu-turtle-bay-pr-0724-1200x900.jpg'},
 ]);
 </script>
 
@@ -159,7 +159,11 @@ const activities = ref([
 .home-container {
   max-width: 1200px; /* Ajusta el ancho máximo según sea necesario */
   margin: 0 auto; /* Centra el contenedor */
-  color: rgb(185, 154, 115);
+  color: rgba(239, 196, 104, 0.907);
+}
+
+p{
+  color: rgb(207, 162, 108)
 }
 
 .carousel-image {
@@ -249,7 +253,7 @@ const activities = ref([
   position: absolute;
   bottom: 10px; /* Posiciona el texto en la parte inferior */
   left: 10px;   /* Espaciado desde el borde izquierdo */
-  color: #b99a73; /* Color del texto */
+  color: #cfa26c; /* Color del texto */
   font-size: 18px; /* Tamaño de la fuente */
   background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para legibilidad */
   padding: 5px 10px; /* Espaciado interno del texto */
@@ -264,7 +268,6 @@ const activities = ref([
 .btn-ver-mas {
   text-align: left; /* Alinea el botón a la izquierda */
   margin-top: 20px; /* Espacio entre el carrusel y el botón */
-  margin-left: 20px; /* Ajusta el margen izquierdo para separarlo del borde */
 }
 
 .banner-carousel{
