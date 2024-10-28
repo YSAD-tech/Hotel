@@ -9,7 +9,7 @@
         v-model="name" 
         label="Name"
         required 
-        label-color="orange" 
+        label-color="green" 
         input-style="color: white"
       />
       <q-input 
@@ -17,7 +17,7 @@
         label="Email" 
         type="email" 
         required 
-        label-color="orange" 
+        label-color="green" 
         input-style="color: white"
       />
       <q-input 
@@ -25,7 +25,7 @@
         label="Message" 
         type="textarea" 
         required 
-        label-color="orange"
+        label-color="green"
         input-style="color: white"
       />
       <q-btn label="Send" type="submit" class="input" color="orange" />
@@ -92,7 +92,7 @@
     max-width: 1200px; /* Ajusta el ancho máximo según sea necesario */
     margin: 0 auto; /* Centra el contenedor */
     padding: 20px;
-    color: rgb(185, 154, 115);
+    color: rgba(239, 196, 104, 0.907);
   }
   
   .contact-form {
