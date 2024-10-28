@@ -7,9 +7,10 @@
     <q-form @submit.prevent="submitForm">
       <q-input 
         v-model="name" 
-        label="Nombre" 
+        label="Nombre"
         required 
         label-color="orange" 
+        input-style="color: white"
       />
       <q-input 
         v-model="email" 
@@ -17,6 +18,7 @@
         type="email" 
         required 
         label-color="orange" 
+        input-style="color: white"
       />
       <q-input 
         v-model="message" 
@@ -24,6 +26,7 @@
         type="textarea" 
         required 
         label-color="orange"
+        input-style="color: white"
       />
       <q-btn label="Enviar" type="submit" class="input" color="orange" />
     </q-form>
@@ -56,6 +59,7 @@
   
   <script setup>
   import { ref } from 'vue';
+  import { Notify } from 'quasar';
   
   // Datos del formulario
   const name = ref('');
@@ -64,19 +68,26 @@
   
   // Función para manejar el envío del formulario
   const submitForm = () => {
-    alert(`Nombre: ${name.value}\nCorreo: ${email.value}\nMensaje: ${message.value}`);
-    // Aquí puedes agregar la lógica para enviar el formulario, como una llamada a una API
-  };
-  
+  Notify.create({
+    message: 'Formulario enviado correctamente',
+    icon: 'check',
+    position: 'top',
+    timeout: 2000,
+    style: { backgroundColor: '#272020f4',
+    color: 'orange' },
+  });
+
+  // Limpiar los campos del formulario después de enviar
+  name.value = '';
+  email.value = '';
+  message.value = '';
+};
+
   // URL del mapa (coordenadas del hotel Marisol)
   const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.053737166252!2d-122.41941508468173!3d37.77492927975943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808f8a0e9c05%3A0x4ae675ee8f7e36c3!2sMarisol%20Hotel!5e0!3m2!1ses!2sus!4v1630221019405!5m2!1ses!2sus";
   </script>
   
   <style scoped>
-.custom-label {
-  color: #ff6600; /* Aquí pones el color personalizado */
-}
-
   .contact-container {
     max-width: 1200px; /* Ajusta el ancho máximo según sea necesario */
     margin: 0 auto; /* Centra el contenedor */
@@ -149,4 +160,4 @@ footer .q-btn i {
   font-size: 24px; /* Tamaño del ícono */
 }
 
-  </style>  
+</style>

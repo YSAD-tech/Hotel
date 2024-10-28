@@ -11,7 +11,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@quasar/extras": "^1.16.12",
-    "quasar": "^2.17.0",
+    "quasar": "^2.17.1",
     "vue": "^3.4.37",
     "vue-router": "^4.4.5"
   },

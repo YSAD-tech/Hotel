@@ -1,6 +1,6 @@
 <template>
     <div class="activities-container">
-      <h1>Actividades y Deportes Extremos</h1>
+      <h1>Extreme sports and activities</h1>
   
       <!-- Actividades -->
       <h2>Actividades Disponibles</h2>

@@ -56,7 +56,7 @@ const services = ref([
   },
   { 
     name: 'Piscina', 
-    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/84/a2/b6/hotel-boutique-spa-terra.jpg?w=1200&h=-1&s=1', 
+    image: 'https://cdn.pixabay.com/photo/2016/11/17/09/28/hotel-1831072_640.jpg', 
     shortDescription: 'Relájate bajo el sol.', 
     detailDescription: 'Nuestra piscina al aire libre es el lugar perfecto para relajarte y disfrutar de un refrescante baño mientras te bronceas al sol.'
   },

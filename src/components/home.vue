@@ -2,31 +2,33 @@
   <div class="home-container">
     <!-- Banner -->
     <q-carousel
-      v-model="slide"
-      swipeable
-      arrows
-      infinite
-      animated
-      autoplay
-      :autoplay-speed="3000"
-      class="banner-carousel"
-      control-color="white"
-      height="400px"
-    >
-      <q-carousel-slide
-        v-for="(image, index) in images"
-        :key="index"
-        :name="index"
-        :img-src="image.src"
-        :img-alt="image.alt"
-        img-class="carousel-image"
-      />
-    </q-carousel>
+  v-model="slide"
+  swipeable
+  arrows
+  infinite
+  animated
+  autoplay
+  :autoplay-speed="1000"  
+  transition-prev="slide-right"
+  transition-next="slide-left"
+  class="banner-carousel"
+  control-color="orange"
+  height="550px"
+>
+  <q-carousel-slide
+    v-for="(image, index) in images"
+    :key="index"
+    :name="index"
+    :img-src="image.src"
+    :img-alt="image.alt"
+    img-class="carousel-image"
+  />
+</q-carousel>
 
     <!-- Historia del Hotel -->
     <div class="hotel-history">
       <div class="history-content">
-        <img src="src/assets/Imagen de WhatsApp 2024-10-10 a las 02.08.01_833d06ad.jpg" alt="Hotel Marisol" class="history-image" />
+        <img src="https://storage.googleapis.com/a1aa/image/IgnVtW8KpPZ1I9BYrcMhl00aXQQArePGkG8WJHEuTUU0w00JA.jpg" alt="Hotel Marisol" class="history-image" />
         <div class="history-text">
           <h2>Nuestra Historia</h2>
           <p>
@@ -43,55 +45,74 @@
     </div>
 
     <!-- Carrusel de Servicios -->
-<div class="services">
-  <h2>Nuestros Servicios</h2>
-  <q-carousel
-    class="services-carousel"
-    arrows
-    infinite
-    height="200px"
-    control-color="white"
-  >
-    <q-carousel-slide v-for="service in services" :key="service.label">
-      <q-btn class="service-card" :to="service.link">
-        <div class="service-info">
-          <img :src="service.image" alt="Imagen de {{ service.label }}" class="services-image" />
-          <h3>{{ service.label }}</h3>
-          <p>{{ service.description }}</p>
-        </div>
-      </q-btn>
-    </q-carousel-slide>
-  </q-carousel>
+    <div class="services">
+      <div class="carousel-wrapper">
+        <h2>Services</h2>
+      <q-carousel
+        v-model="serviceSlide"
+        swipeable
+        arrows
+        infinite
+        animated
+        autoplay
+        :autoplay-speed="2000"
+        transition-prev="slide-right"
+        transition-next="slide-left"
+        class="services-carousel"
+        control-color="white"
+        height="200px"
+      >
+        <q-carousel-slide
+          v-for="(service, index) in services"
+          :key="index"
+          :name="index"
+          :img-src="service.image"
+          :img-alt="service.name"
+          img-class="carousel-image"
+        ><div class="carousel-text">{{ service.name}}</div>
+      </q-carousel-slide>
+      </q-carousel>
 
-  <!-- Botón de Ver más para Servicios -->
-  <div class="btn-ver-mas">
-    <q-btn to="/services">Ver más...</q-btn>
-  </div>
+      <!-- Botón de Ver más para Servicios -->
+      <div class="btn-ver-mas">
+        <q-btn to="/services">Ver más...</q-btn>
+      </div>
+      </div>
+      <div class="carousel-wrapper">
+        <h2>Activities</h2>
+      <q-carousel
+        v-model="activitySlide"
+        swipeable
+        arrows
+        infinite
+        animated
+        autoplay
+        :autoplay-speed="2000"
+        transition-prev="slide-right"
+        transition-next="slide-left"
+        class="activities-carousel"
+        control-color="white"
+        height="200px"
+      >
+        <q-carousel-slide
+          v-for="(activity, index) in activities"
+          :key="index"
+          :name="index"
+          :img-src="activity.image"
+          :img-alt="activity.label"
+          img-class="carousel-image"
+        ><div class="carousel-text">{{ activity.label }}</div>
+      </q-carousel-slide>
+      </q-carousel>
 
-  <h2>Actividades</h2>
-  <q-carousel
-    class="activities-carousel"
-    arrows
-    infinite
-    height="200px"
-    control-color="white"
-  >
-    <q-carousel-slide v-for="activity in activities" :key="activity.label">
-      <q-btn class="activity-card" :to="activity.link">
-        <img :src="activity.image" alt="Imagen de {{ activity.label }}" class="activity-image" />
-        <div class="activity-info">
-          <h3>{{ activity.label }}</h3>
-          <p>{{ activity.description }}</p>
-        </div>
-      </q-btn>
-    </q-carousel-slide>
-  </q-carousel>
-
-  <!-- Botón de Ver más para Actividades -->
-  <div class="btn-ver-mas">
-    <q-btn to="/activities">Ver más...</q-btn>
-  </div>
+      <!-- Botón de Ver más para Actividades -->
+      <div class="btn-ver-mas">
+        <q-btn to="/activities">Ver más...</q-btn>
+      </div>
+      </div>
+      
 </div>
+
 
   </div>
 
@@ -113,67 +134,24 @@
 import { ref } from 'vue';
 
 const slide = ref(0);
-const images = ref([
-  { src: 'src/assets/Imagen de WhatsApp 2024-10-10 a las 02.08.01_91e2b680.jpg', alt: 'Beautiful view of the hotel' },
-  { src: 'src/assets/Imagen de WhatsApp 2024-10-10 a las 02.08.01_833d06ad.jpg', alt: 'Luxury room' },
-  { src: 'src/assets/Imagen de WhatsApp 2024-10-10 a las 02.08.02_0cedf670.jpg', alt: 'Hotel pool at night' }
+const serviceSlide = ref(0);
+const activitySlide = ref(0);
+const images = ref([  
+  { src: 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/501000/501672-spain.jpg?impolicy=fcrop&w=1040&h=580&q=mediumHigh', alt: 'Hotel pool at night' },
+  { src: 'https://cdn.prod.website-files.com/5c6d6c45eaa55f57c6367749/65046bf150d1abb7e5911702_x-65046bcfdc4f0.webp', alt: 'Luxury room' },
+  { src: 'https://images.unsplash.com/photo-1561501900-3701fa6a0864?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjBkZSUyMGx1am98ZW58MHx8MHx8fDA%3D', alt: 'Hotel pool at night' },
 ]);
 
 const services = ref([
-  { 
-    name: 'Spa', 
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaIy-UU1AUxK1tczKd999BLDWBtf2fpx1rWXkYtXQ984ot1Th2NtS6hOdbkkEtRBMebMw&usqp=CAU', 
-    shortDescription: 'Relájate y rejuvenece.', 
-    detailDescription: 'Disfruta de una amplia variedad de tratamientos de spa, incluyendo masajes, faciales y terapias holísticas para relajarte y rejuvenecer tu cuerpo y mente.'
-  },
-  { 
-    name: 'Restaurante', 
-    image: 'src/assets/restaurant.jpg', 
-    shortDescription: 'Gastronomía exquisita.', 
-    detailDescription: 'Deléitate con una experiencia culinaria única en nuestro restaurante, donde ofrecemos una variedad de platillos preparados por chefs de renombre.'
-  },
-  { 
-    name: 'Gimnasio', 
-    image: 'src/assets/gym.jpg', 
-    shortDescription: 'Mantente en forma.', 
-    detailDescription: 'Nuestro gimnasio está equipado con máquinas de última generación y ofrece clases dirigidas para ayudarte a mantener tu rutina de ejercicios mientras estás de viaje.'
-  },
-  { 
-    name: 'Servicio a la Habitación', 
-    image: 'src/assets/room_service.jpg', 
-    shortDescription: 'Comodidad en tu habitación.', 
-    detailDescription: 'Disfruta de nuestro servicio a la habitación, disponible las 24 horas, para que puedas degustar deliciosos platillos sin salir de tu habitación.'
-  },
-  { 
-    name: 'Piscina', 
-    image: 'src/assets/pool.jpg', 
-    shortDescription: 'Relájate bajo el sol.', 
-    detailDescription: 'Nuestra piscina al aire libre es el lugar perfecto para relajarte y disfrutar de un refrescante baño mientras te bronceas al sol.'
-  },
-  { 
-    name: 'Transporte', 
-    image: 'src/assets/transport.jpg', 
-    shortDescription: 'Facilita tu movilidad.', 
-    detailDescription: 'Ofrecemos servicios de transporte al aeropuerto y excursiones, asegurando que tu experiencia de viaje sea cómoda y sin complicaciones.'
-  },
-  { 
-    name: 'Conexión Wi-Fi', 
-    image: 'src/assets/wifi.jpg', 
-    shortDescription: 'Conéctate en cualquier lugar.', 
-    detailDescription: 'Disfruta de conexión Wi-Fi gratuita en todas las áreas del hotel para mantenerte conectado con amigos y familiares durante tu estancia.'
-  },
-  { 
-    name: 'Centro de Negocios', 
-    image: 'src/assets/business_center.jpg', 
-    shortDescription: 'Ideal para viajes de negocios.', 
-    detailDescription: 'Nuestro centro de negocios está equipado con computadoras y servicios de impresión para satisfacer tus necesidades laborales durante tu estancia.'
-  }
+  { name: 'Spa', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaIy-UU1AUxK1tczKd999BLDWBtf2fpx1rWXkYtXQ984ot1Th2NtS6hOdbkkEtRBMebMw&usqp=CAU' },
+  { name: 'Restaurante', image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/15/da/15/terraza.jpg?w=600&h=-1&s=1' },
+  { name: 'Gimnasio', image: 'https://etenonfitness.com/wp-content/uploads/2023/04/Novotel-Shanghai-Clover-Star-Trac.jpg' },
 ]);
 
 const activities = ref([
-  { label: 'Tour de la ciudad', description: 'Explora la ciudad con nuestros guías expertos.', link: '/city-tour', image: 'src/assets/Imagen de WhatsApp 2024-10-10 a las 02.08.01_91e2b680.jpg' },
-  { label: 'Senderismo', description: 'Descubre la belleza natural de los alrededores en nuestras rutas de senderismo.', link: '/hiking', image: 'src/assets/Imagen de WhatsApp 2024-10-10 a las 02.08.01_91e2b680.jpg' },
-  { label: 'Clases de cocina', description: 'Aprende a preparar platos locales con nuestros chefs.', link: '/cooking-classes', image: 'src/assets/Imagen de WhatsApp 2024-10-10 a las 02.08.01_91e2b680.jpg' },
+  { label: 'Bungee Jumping', image: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/22/b3/f1.jpg' },
+  { label: 'Senderismo', image: 'https://media-magazine.trivago.com/wp-content/uploads/2019/11/27121325/hoteles-para-senderistas-junto-a-montanas.jpg' },
+  { label: 'Surf', image: 'https://www.sunset.com/wp-content/uploads/surf-hotels-jamie-obrien-surf-experience-the-ritz-carlton-oahu-turtle-bay-pr-0724-1200x900.jpg' },
 ]);
 </script>
 
@@ -255,11 +233,31 @@ const activities = ref([
   color: #000000; /* Color de texto más suave */
 }
 
+.services{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.carousel-wrapper{
+  flex: 1;
+  max-width: 40%;
+}
+
+.carousel-text {
+  position: absolute;
+  bottom: 10px; /* Posiciona el texto en la parte inferior */
+  left: 10px;   /* Espaciado desde el borde izquierdo */
+  color: #b99a73; /* Color del texto */
+  font-size: 18px; /* Tamaño de la fuente */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para legibilidad */
+  padding: 5px 10px; /* Espaciado interno del texto */
+  border-radius: 4px;
+}
+
 .services-carousel,
 .activities-carousel {
-  margin: 20px 0;
-  padding: 10px; /* Añade espacio alrededor del carrusel */
-  background-color: #fff; /* Fondo blanco para los carruseles */
   border-radius: 8px; /* Bordes redondeados en el carrusel */
 }
 
@@ -269,6 +267,10 @@ const activities = ref([
   margin-left: 20px; /* Ajusta el margen izquierdo para separarlo del borde */
 }
 
+.banner-carousel{
+  border: 2px solid #000000;
+}
+
 .btn-ver-mas .q-btn {
   background-color: #d4c19c; /* Color de fondo del botón */
   color: white; /* Color del texto */
@@ -276,10 +278,6 @@ const activities = ref([
   font-size: 16px; /* Tamaño de la fuente */
   border-radius: 8px; /* Bordes redondeados */
   transition: background-color 0.3s ease;
-}
-
-.btn-ver-mas .q-btn:hover {
-  background-color: #b39c7c; /* Cambio de color en hover */
 }
 
 footer {
@@ -305,13 +303,5 @@ footer .q-btn {
   background-color: #d4c19c; /* Color de fondo personalizado */
   color: white; /* Color del ícono */
   transition: background-color 0.3s ease;
-}
-
-footer .q-btn:hover {
-  background-color: #b39c7c; /* Cambio de color en hover */
-}
-
-footer .q-btn i {
-  font-size: 24px; /* Tamaño del ícono */
 }
 </style>
